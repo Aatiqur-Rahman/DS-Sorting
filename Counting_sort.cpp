@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int digit[10];
+
 /*
 void print_solution(int arr[],int n){
     for (int i=0;i<n;i++) {
@@ -12,24 +14,28 @@ void print_solution(int arr[],int n){
 */
 
 void Counting_sort(int arr[],int n){
-    int digit[10];
     int temp;
     for(int i=0;i<n;i++)
         temp=arr[i];
         cout << temp << " " << endl;
         digit[temp]+=1;
     }
-    for(int j=0;j<10;j++){
-        cout << digit[j] << " ";
-    }cout << endl;
-
-    for (int i=0;i<10;i++) {
-        if (digit[i]<1)digit[i]=0;
+    for(int i=0;i<10;i++){
+        cout << digit[i] << " ";
     }
-    /*  Cumulative sum */
-    for(int i=0;i<10-1;i++){
+    cout << endl;
+
+    //  Cumulative sum //
+
+    for(i=0;i<10-1;i++){
         digit[i+1]+=digit[i];
     }
+
+    for(int i=0;i<10;i++){
+        cout << digit[i] << " ";
+    }
+    cout << endl;
+
     int arr1[n+1];
     for(int i=0;i<n;i++){
         int t1,t2;
