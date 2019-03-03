@@ -23,6 +23,8 @@ void Counting_sort(int arr[],int n){
     for(int i=0;i<10;i++){
         cout << digit[i] << " ";
     }
+
+
     cout << endl;
 
     //  Cumulative sum //
